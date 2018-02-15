@@ -19,5 +19,6 @@ Route::prefix('telegram')->group(function () {
     Route::get('set', 'BotController@set');
     Route::get('path', 'BotController@path');
     Route::get('run', 'BotController@run');
+    Route::get('unset', 'BotController@unset');
     Route::post('hook', 'BotController@hook');
 });
