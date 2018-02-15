@@ -134,7 +134,7 @@ class BotController extends Controller
     {
         try {
             // Create Telegram API object
-            $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
+            $telegram = new Telegram($this->bot_token, $this->bot_uname);
             // Delete webhook
             $result = $telegram->deleteWebhook();
             if ($result->isOk()) {
@@ -145,7 +145,7 @@ class BotController extends Controller
 
                 $response = '';
             }
-        } catch (Longman\TelegramBot\Exception\TelegramException $e) {
+        } catch (TelegramException $e) {
             dd($e->getMessage());
         }
 
